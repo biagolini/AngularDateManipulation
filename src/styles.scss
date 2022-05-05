@@ -1,0 +1,42 @@
+body {
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 30px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+h1 {
+  text-align: center;
+  font-weight: bold;
+}
+
+.full-width {
+  width: 100%;
+}
+.full-height {
+  height: 100%;
+}
+
+.half-width {
+  width: 50%;
+}
+
+.page {
+  margin: 5px;
+  color: #103060;
+  font-size: 15px;
+}
+
+.submmit-button {
+  background-color: #103060;
+  color: white;
+  margin: 1em 0em 2em 0;
+}
+
+.al-center {
+  text-align: center;
+}
