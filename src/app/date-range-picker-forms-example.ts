@@ -1,3 +1,4 @@
+import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
@@ -7,7 +8,7 @@ import { debounceTime } from 'rxjs/operators';
   selector: 'date-range-picker-forms-example',
   templateUrl: 'date-range-picker-forms-example.html',
 })
-export class DateRangePickerFormsExample {
+export class DateRangePickerFormsExample implements OnInit {
   range = new FormGroup({
     start: new FormControl(),
     end: new FormControl(),
@@ -16,6 +17,15 @@ export class DateRangePickerFormsExample {
   stringDate = new FormControl();
   numberDay = new FormControl('DD');
   numberWeek = new FormControl('WW');
+
+  convertedToText: any = '';
+
+  ngOnInit(): void {
+    this.range.get('start')?.valueChanges.subscribe((data) => {
+      let formattedDt = formatDate(data, 'yyyy-MM-dd', 'en_US');
+      this.convertedToText = formattedDt;
+    });
+  }
 
   calcDifDay() {
     // CALCULATE NUMBER O MS IN A DAY
